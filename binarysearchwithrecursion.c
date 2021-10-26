@@ -4,28 +4,28 @@
 int binarysearch(int arr[],int si,int ei,int k)
 {
     int mid = 0;
-    while(si<=ei)
+    if (si > ei) // Not found
+    return -1;
+    mid=(si+ei)/2;
+    printf("--------\n");
+    printf("Starting index : %d\n",si);
+    printf("Ending index : %d\n",ei);
+    printf("Midle index : %d\n",mid);
+    printf("--------\n");
+    
+    if(arr[mid] == k)
     {
-        mid=(si+ei)/2;
-        printf("--------\n");
-        printf("Starting index : %d\n",si);
-        printf("Ending index : %d\n",ei);
-        printf("Midle index : %d\n",mid);
-        printf("--------\n");
-        if(arr[mid] == k)
-        {
-            return mid;
-        }
-        else if(arr[mid]>k)
-        {
-            return binarysearch(arr,si,mid-1,k);
-        }
-        else 
-        { 
-            return binarysearch(arr,mid+1,ei,k);
-        }
-        return -1;
+        return mid;
     }
+    else if(arr[mid]>k)
+    {
+        return binarysearch(arr,si,mid-1,k);
+    }
+    else 
+    { 
+        return binarysearch(arr,mid+1,ei,k);
+    }
+  
 }
 void main()
 {
@@ -43,6 +43,7 @@ void main()
     scanf("%d",&k);
      
     res = binarysearch(arr,0,n,k);
+
     if(res == -1)
     {
         printf("Element not found");
