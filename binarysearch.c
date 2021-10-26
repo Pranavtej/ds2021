@@ -24,7 +24,10 @@ int binarysearch(int arr[],int si,int ei,int k)
         {
             si = mid+1;
         }
-        return -1;
+        if(si>ei)
+        {
+            return -1;
+        }
     }
 }
 void main()
