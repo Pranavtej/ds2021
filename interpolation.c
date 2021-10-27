@@ -16,12 +16,9 @@ int isearch(int arr[],int si,int ei,int k)
         else
         {
             si = mid + 1;
-        }  
-        if(si>ei)
-        {
-            return -1;
         }    
     }
+    return -1;
 }
 
 void main()
