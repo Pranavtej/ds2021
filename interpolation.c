@@ -1,32 +1,26 @@
 #include<stdio.h>
 #include<conio.h>
-
-int binarysearch(int arr[],int si,int ei,int k)
+int isearch(int arr[],int si,int ei,int k)
 {
-    int mid = 0;
-    while(si<=ei)
-    {
-        mid=(si+ei)/2;
-        printf("--------\n");
-        printf("Starting index : %d\n",si);
-        printf("Ending index : %d\n",ei);
-        printf("Midle index : %d\n",mid);
-        printf("--------\n");
-        if(arr[mid] == k)
+    int mid;
+    while (si<=ei) {
+        mid = si + (ei - si)*((k-arr[si])/(arr[ei]-arr[si]));
+        if (k == arr[mid])
         {
-            return mid;
+            return mid + 1;
         }
-        else if(arr[mid]>k)
+        if (k < arr[mid])
         {
-            ei = mid-1;
+            ei = mid - 1;
         }
-        else 
+        else
         {
-            si = mid+1;
-        }
+            si = mid + 1;
+        }      
     }
     return -1;
 }
+
 void main()
 {
     int n,i;
@@ -42,7 +36,9 @@ void main()
     printf("Enter Element to search");
     scanf("%d",&k);
      
-    res = binarysearch(arr,0,n,k);
+    res = isearch(arr,0,n,k);
+    printf("##########");
+    printf("%d",res);
     if(res == -1)
     {
         printf("Element not found");

@@ -5,7 +5,9 @@ int binarysearch(int arr[],int si,int ei,int k)
 {
     int mid = 0;
     if (si > ei) // Not found
-    return -1;
+    {
+        return -1;
+    }
     mid=(si+ei)/2;
     printf("--------\n");
     printf("Starting index : %d\n",si);
