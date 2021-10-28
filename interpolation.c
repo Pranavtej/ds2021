@@ -36,9 +36,7 @@ void main()
     printf("Enter Element to search");
     scanf("%d",&k);
      
-    res = isearch(arr,0,n,k);
-    printf("##########");
-    printf("%d",res);
+    res = isearch(arr,0,n-1,k);
     if(res == -1)
     {
         printf("Element not found");
