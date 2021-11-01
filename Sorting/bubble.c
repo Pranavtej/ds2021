@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <conio.h>
-void bubble(int[],int);
+void bubblesort(int[],int);
+void selectionsort(int[],int);
+void insertionsort(int[],int);
+
 int main(void) 
 {
 	int a[10],i,j,temp,n;
@@ -18,7 +21,7 @@ int main(void)
 		}
 	return 0;
 }
-void bubble(int a[],int n)
+void bubblesort(int a[],int n)
 {
 	int i,j,temp;
 	for(i=0;i<n;i++)
