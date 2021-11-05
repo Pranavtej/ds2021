@@ -38,13 +38,13 @@ int partition(int arr[], int fst, int last)
   pivot=arr[fst];
   i=fst;
   j=last;
-  while (i<=j) 
+  while (i<j) 
   {
     while (arr[i]<=pivot && i<last)
     {
         i++;
     }
-    while(arr[j]>=pivot && j>fst)
+    while(arr[j]>pivot && j>fst)
     {
         j--;
     } 
