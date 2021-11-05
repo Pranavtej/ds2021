@@ -3,7 +3,6 @@
 void bubblesort(int[],int);
 void selectionsort(int[],int);
 void insertionsort(int[],int);
-
 int main(void) 
 {
 	int a[10],i,j,temp,n;
@@ -13,7 +12,7 @@ int main(void)
 	{
 		scanf("%d",&a[i]);
 	}
-	selectionsort(a,n);
+	insertionsort(a,n);
 	printf("//---after sorting---//\n");
 	for(i=0;i<n;i++)
 		{
