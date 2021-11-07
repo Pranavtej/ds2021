@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 void quicksort(int[],int,int);
 int partition(int[],int,int);
 void main(void) 
