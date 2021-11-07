@@ -28,14 +28,14 @@ void mergesort(int a[], int p, int r)
     merge(a, p, q, r);
   }
 }
-void merge(int a[], int p, int q, int r)
+void merge(int a[], int first, int mid, int last)
 {
   int b[100];     //same size of a[]
   int i, j, k;
   k = 0;
-  i = p;
-  j = q+1;
-  while(i <= q && j <= r)
+  i = first;
+  j = mid+1;
+  while(i <= mid && j <= last)
   {
     if(a[i] < a[j])
     {
@@ -46,15 +46,15 @@ void merge(int a[], int p, int q, int r)
       b[k++] = a[j++];
     }
   }
-  while(i <= q)
+  while(i <= mid)
   {
     b[k++] = a[i++];
   }
-  while(j <= r)
+  while(j <= last)
   {
     b[k++] = a[j++];
   }
-  for(i=r; i >= p; i--)
+  for(i=last; i >= first; i--)
   {
     a[i] = b[--k];        // copying back the sorted list to a[]
   }
