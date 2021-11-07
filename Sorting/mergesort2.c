@@ -46,17 +46,23 @@ void merge(int a[], int first, int mid, int last)
       b[k++] = a[j++];
     }
   }
-  while(i <= mid)
+  if(i>mid)
   {
-    b[k++] = a[i++];
+      while(j<=last)
+      {
+          b[k++]=a[j++];
+      }
   }
-  while(j <= last)
+  else
   {
-    b[k++] = a[j++];
+      while(i<=mid)
+      {
+          b[k++]=a[i++];
+      }
   }
-  for(i=last;i>=first; i--)
+  for(k=first;i<=last;k++)
   {
-    a[i] = b[--k];        // copying back the sorted list to a[]
+      a[k]=b[k];
   }
 }
 
