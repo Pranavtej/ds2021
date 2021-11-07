@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 int isearch(int arr[],int si,int ei,int k)
 {
     int mid;
