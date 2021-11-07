@@ -10,7 +10,7 @@ void main(void)
 	{
 		scanf("%d",&a[i]);
 	}
-  a[i]=999;
+  	a[i]=999;
 	quicksort(a,0,n);
 	printf("//---after sorting---//\n");
 	for(i=0;i<=n;i++)
