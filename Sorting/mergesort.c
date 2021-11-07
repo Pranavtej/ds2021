@@ -30,7 +30,7 @@ void mergesort(int a[], int p, int r)
 }
 void merge(int a[], int p, int q, int r)
 {
-  int b[5];     //same size of a[]
+  int b[100];     //same size of a[]
   int i, j, k;
   k = 0;
   i = p;
@@ -39,7 +39,7 @@ void merge(int a[], int p, int q, int r)
   {
     if(a[i] < a[j])
     {
-b[k++] = a[i++];       // same as b[k]=a[i]; k++; i++;
+      b[k++] = a[i++];       // same as b[k]=a[i]; k++; i++;
     }
     else
     {
