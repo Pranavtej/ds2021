@@ -59,5 +59,3 @@ void merge(int a[], int first, int mid, int last)
     a[i] = b[--k];        // copying back the sorted list to a[]
   }
 }
-
-

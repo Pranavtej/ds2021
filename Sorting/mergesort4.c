@@ -31,39 +31,40 @@ void mergesort(int a[], int p, int r)
 void merge(int a[], int first, int mid, int last)
 {
   int b[100];     //same size of a[]
-  int i, j, k;
-  k = 0;
+  int i, j, k,l;
+  k = first;
   i = first;
   j = mid+1;
   while(i <= mid && j <= last)
   {
     if(a[i] < a[j])
     {
-      b[k++] = a[i++];       // same as b[k]=a[i]; k++; i++;
+      // same as b[k]=a[i]; k++; i++;
+      b[k++]=a[i++];
     }
     else
     {
-      b[k++] = a[j++];
+      b[k++]=a[j++];
     }
   }
-  if(i>mid)
-  {
+  if (i > mid)
+    {
       while(j<=last)
       {
-          b[k++]=a[j++];
-      }
-  }
-  else
-  {
+        b[k++]=a[j++];
+      }  
+    }
+    else
+    {
       while(i<=mid)
       {
-          b[k++]=a[i++];
+        b[k++]=a[i++];
       }
-  }
-  for(k=first;i<=last;k++)
-  {
-      a[k]=b[k];
-  }
+    }
+  for (k = first; k <= last; k++)
+    {
+        a[k]=b[k];
+    }
 }
 
 
