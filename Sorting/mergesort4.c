@@ -31,7 +31,7 @@ void mergesort(int a[], int p, int r)
 void merge(int a[], int first, int mid, int last)
 {
   int b[100];     //same size of a[]
-  int i, j, k,l;
+  int i, j, k;
   k = first;
   i = first;
   j = mid+1;
