@@ -13,9 +13,9 @@ void main(void)
 	mergesort(a,0,n);
 	printf("//---after sorting---//\n");
 	for(i=0;i<=n;i++)
-		{
-			printf("%d\t",a[i]);
-		}
+	{
+		printf("%d\t",a[i]);
+	}
 }
 void mergesort(int a[], int p, int r)
 {
