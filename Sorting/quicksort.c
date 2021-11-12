@@ -6,7 +6,7 @@ void main(void)
 	int a[100],i,j,temp,n;
 	printf("enter the value of n");
 	scanf("%d",&n);
-	for(i=0;i<=n;i++)
+	for(i=0;i<n;i++)
 	{
 		scanf("%d",&a[i]);
 	}
@@ -15,7 +15,7 @@ void main(void)
     
 	quicksort(a,0,n);
 	printf("//---after sorting---//\n");
-	for(i=0;i<=n;i++)
+	for(i=0;i<n;i++)
 		{
 			printf("%d\t",a[i]);
 		}

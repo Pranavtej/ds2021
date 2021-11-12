@@ -13,7 +13,7 @@ void main(void)
 	}
 	radix(a,n);
 	printf("//---after sorting---//\n");
-	for(i=0;i<=n;i++)
+	for(i=0;i<n;i++)
 		{
 			printf("%d\t",a[i]);
 		}
@@ -44,35 +44,32 @@ int noofdigits(int n)
 
 void radix(int a[],int n)
 {
-    int i,j,k,div,reminder,nop,pass,larg;
-    int bucket[10][20],bucketcount[10];
-    div=1;
-    larg = largest(a,n);
-    nop= noofdigits(larg);
-
-    printf("largest:%d\t noofdigits:%d\n",larg,nop);
-
+    int i,j,k,d=1,r,l,nop,pass;
+    int bucket[10][20],bc[10];
+    l=largest(a,n);
+    nop=noofdigits(l);
     for(pass=0;pass<nop;pass++)
     {
         for(i=0;i<10;i++)
         {
-            bucketcount[i]=0;
-        }
+            bc[i]=0;
+        } 
         for(i=0;i<=n;i++)
         {
-            reminder = (a[i]/div)%10;
-            bucket[reminder][bucketcount[reminder]]=a[i];
-            bucketcount[reminder]= bucketcount[reminder]+1;
+            r=(a[i]/d)%10;
+            bucket[r][bc[r]]=a[i];
+            bc[r]+=1;
         }
         i=0;
         for(k=0;k<10;k++)
         {
-            for(j=0;j<bucketcount[k];j++)
+            for(j=0;j<bc[k];j++)
             {
                 a[i]=bucket[k][j];
                 i++;
             }
         }
-        div=div*10;
+        d*=10;
+
     }
 }

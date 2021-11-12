@@ -12,7 +12,7 @@ int main(void)
 	{
 		scanf("%d",&a[i]);
 	}
-	insertionsort(a,n);
+	selectionsort(a,n);
 	printf("//---after sorting---//\n");
 	for(i=0;i<n;i++)
 		{
