@@ -1,7 +1,5 @@
 #include <stdio.h>
 void radix(int[],int);
-
-
 void main(void) 
 {
 	int a[20],i,n;
@@ -13,10 +11,17 @@ void main(void)
 	}
 	radix(a,n);
 	printf("//---after sorting---//\n");
+<<<<<<< HEAD
 	for(i=0;i<n;i++)
 		{
 			printf("%d\t",a[i]);
 		}
+=======
+	for(i=0;i<=n;i++)
+	{
+		printf("%d\t",a[i]);
+	 }
+>>>>>>> 09ebb13e6e9c56cc153d3c2f969d2274cc1cad2d
 }
 int largest(int a[],int n)
 {
