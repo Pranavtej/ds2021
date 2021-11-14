@@ -36,7 +36,7 @@ void main()
             break;
         case 2:
             item = pop(&s);
-            if(item == 0)
+            if(item == -1)
             {
                 printf("\n****Stack is empty****");
             }
@@ -49,8 +49,8 @@ void main()
             display(&s);
             break;
         case 4:
-            item = pop(&s);
-            if(item == 0)
+            item = peek(&s);
+            if(item == -1)
             {
                 printf("\n****Stack is empty****");
             }
@@ -61,7 +61,7 @@ void main()
             break;
         case 5:
             item = empty(&s);
-            if(item == 0)
+            if(item == -1)
             {
                 printf("\n****Stack is empty****");
             }
@@ -98,7 +98,7 @@ int pop(struct stack *st)
     int element;
     if(st->top == -1)
     {
-        return 0;
+        return -1;
     }
     else
     {
@@ -123,7 +123,7 @@ int peek(struct stack *st)
     int element;
     if(st->top == -1)
     {
-        return 0;
+        return -1;
     }
     else
     {
@@ -135,7 +135,7 @@ int empty(struct stack *st)
 {
     if(st->top == -1)
     {
-        return 0;
+        return -1;
     }
     else
     {
