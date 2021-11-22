@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "conio.h": "c"
+        "conio.h": "c",
+        "POSTFIXE.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

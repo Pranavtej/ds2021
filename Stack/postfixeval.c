@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<math.h>
 #define MAX 10
-
 struct stack 
 {
     int item[MAX];
@@ -36,7 +35,7 @@ double eval(char exp[])
     {
         if(isdigit(c))
         {
-            push(&s,(double)c - '\0');
+            push(&s,(double)c-'0');
         }
         else
         {
