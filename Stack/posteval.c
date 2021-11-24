@@ -1,57 +1,52 @@
-/*postfix evaluation*/
-#define MAX 20
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#define MAX 10
 struct stack
 {
-	int top;
-	double items[MAX];
+    int items[MAX];
+    int top;
 };
-struct stack s;
 double oper(char,double,double);
 void push(struct stack *,double);
 double pop(struct stack *);
 int empty(struct stack *);
 double eval(char []);
 int isdigit(char);
-main()
+void main()
 {
-
-	char expr[MAX];
-	//clrscr();
-	s.top=-1;
-	printf("enter the postfix expression");
-	scanf("%s",expr);
-	printf("\nthe original postfix expression is %s",expr);
-	printf("\n%lf",eval(expr));
- }
-
-double eval(char expr[])
+    char exp[10];
+    printf("Enter expersion");
+    scanf("%s",exp);
+    printf("%s  expersion",exp);
+    printf("Result is %f",eval(exp));
+}
+double eval(char ex[])
 {
-	int i;
-	char c;
-	double opnd1,opnd2,value;
-
-	for(i=0;(c=expr[i])!='\0';i++)
-	{
-		if(isdigit(c))
-		{
-			push(&s,(double)c-'0');
-		}
-		else
-		{
-			printf("\n%c",c);
+    int i;
+    char c;
+    double opnd1,opnd2,value;
+    struct stack s;
+    s.top=-1;
+    for(i=0;(c=ex[i])!='\0';i++)
+    {
+        if(isdigit(c))
+        {
+            push(&s,(double)c-'0');
+        }
+        else
+        {
+            printf("\n%c",c);
 			opnd2=pop(&s);
 			opnd1=pop(&s);
 			value=oper(c,opnd1,opnd2);
 			push(&s,value);
 
-		}
-
-	}
-	return(pop(&s));
+        }
+    }
+    return pop(&s);
 }
+
 int isdigit(char symb)
 {
 	return(symb>='0'&&symb<='9');
