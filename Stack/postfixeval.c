@@ -20,8 +20,8 @@ void main()
     char exp[MAX];
     printf("Enter postfix expression");
     scanf("%s",exp);
-    printf("Original postfix expression :%s",exp);
-    printf("Original postfix expression :%f",eval(exp));
+    printf("\nOriginal postfix expression :%s",exp);
+    printf("\nOriginal postfix expression :%f",eval(exp));
 
 }
 double eval(char exp[])
@@ -31,7 +31,7 @@ double eval(char exp[])
     double op1,op2,val;
     struct stack s;
     s.top = -1;
-    for(i=0;c=exp[i]!='\0';i++)
+    for(i=0;(c=exp[i])!='\0';i++)
     {
         if(isdigit(c))
         {
@@ -39,20 +39,22 @@ double eval(char exp[])
         }
         else
         {
+            printf("\n%c",c);
             op2 = pop(&s);
             op1 = pop(&s);
             val = oper(c,op1,op2);
             push(&s,val);
         }
-        return (pop(&s));       
     }
+        return (pop(&s));       
+    
 }
 
 int isdigit(char sym)
 {
     return(sym>='0'&& sym<='9');
-
 }
+
 
 double oper(char sym, double op1,double op2)
 {
@@ -60,16 +62,14 @@ double oper(char sym, double op1,double op2)
 	{
 		case '+': return(op1+op2);
                   break;
-
 		case '-': return(op1-op2);
-        break;
-
+                break;
 		case '*': return(op1*op2);
-        break;
+                break;
 		case '/': return(op1/op2);
-        break;
+                break;
 		case '$': return(pow(op1,op2));
-        break;
+                break;
 		default: printf("\nillegal operation %c",sym);
 			exit(0);
             break;
