@@ -3,12 +3,14 @@ int isdigit(char);
 
 void main()
 {
-    char c = 'a'; //97 in ASCII
-    double x = (double)c -'0'; 
-    printf("%f\n", x);
-    printf("%f\n",(double)'0');
- 
-    printf("%f",(double)'9');
+    char c='5';
+    printf("\ncharacter :: %c",c);
+    printf("\n asci in floot :: %f ",(double)c);
+    printf("\n asci in number :: %d",(int)c);
+    printf("\n numarical :: %d",(int)c-0);
+    printf("give value is :: %d",isdigit('9'));
+
+
 }
 
 int isdigit(char symb)
