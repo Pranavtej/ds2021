@@ -8,7 +8,7 @@ struct stack
     int items[MAX];
     int top;
 };
-double eval(char []);
+double eval(char []);\
 int isdigit(char);
 double operation(char,double,double);
 void push(struct stack *,double);

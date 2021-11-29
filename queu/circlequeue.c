@@ -122,7 +122,9 @@ int del(struct cqueue *cqu)
 {
 	int a;
 	if(cqu->front==-1)
-		return -1;
+    {
+        return -1;
+    }
 	a=cqu->items[cqu->front];
 	if(cqu->front==cqu->rear)
 	{
