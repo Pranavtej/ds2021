@@ -1,5 +1,3 @@
-int isdigit(char sym)
-{
-    return(sym>='0'&& sym<='9');
-
-}
+printf("\ncharacter :: %c",c);
+    // printf("\ncharacter :: %d",c);
+    // printf("\ncharacter :: %d",(int)c-'0');
