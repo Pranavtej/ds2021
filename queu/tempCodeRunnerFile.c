@@ -1,1 +1,1 @@
-        if(cqu->front <= cqu->rear)
+	a=cqu->items[cqu->front];
