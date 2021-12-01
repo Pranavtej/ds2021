@@ -86,6 +86,7 @@ int del(struct cqueue *cqu)
 	{
 		return -1;
 	}
+
 	a=cqu->items[cqu->front];
 	if(cqu->front==cqu->rear)
 	{
