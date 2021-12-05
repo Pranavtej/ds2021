@@ -1,5 +1,6 @@
 #define max 4
 #include<stdio.h>
+#include<stdlib.h>
 struct cqueue
 {
 	int front,rear;

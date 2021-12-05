@@ -17,6 +17,7 @@ nodeptr insertAtBeg(nodeptr,nodeptr);
 nodeptr insertAtEnd(nodeptr,nodeptr);
 nodeptr insertBeforElement(nodeptr,nodeptr);
 nodeptr insertAfterElement(nodeptr,nodeptr);
+nodeptr deleteAtBeg(nodeptr);
 
 
 main()
@@ -136,24 +137,96 @@ nodeptr insert(nodeptr p)
 		scanf("%d",&ch);
 		switch(ch)
 		{
-			case 1:	
-				return(insertAtBeg(firstnode,newnode));
-			case 2:	
-				return(insertAtEnd(firstnode,newnode));
-			case 3: 
-				return(insertBeforElement(firstnode,newnode));
-			case 4: 
-				return(insertAfterElement(firstnode,newnode));
+			case 1:	return(insertAtBeg(firstnode,newnode));
+			case 2:	return(insertAtEnd(firstnode,newnode));
+			case 3: return(insertBeforElement(firstnode,newnode));
+			case 4: return(insertAfterElement(firstnode,newnode));
 		}
 	}
 }
+nodeptr deleteAtBeg(nodeptr firstnode)
+{
+	nodeptr temp;
+	temp = firstnode->next;
+	firstnode->next = NULL;
+	return temp;
+}
+
+nodeptr deleteAtEnd(nodeptr firstnode)
+{
+	// with single temp varible
+	// nodeptr temp;
+	// temp = firstnode;
+	// while(temp->next->next!=NULL)
+	// {
+	// 	temp=temp->next;
+	// }				
+	// temp->next=NULL;
+	//with two temp varibles
+	nodeptr temp1,temp2;
+	temp1 = firstnode;
+	while(temp1->next!=NULL)
+	{
+		temp2=temp1;
+		temp1=temp1->next;
+	}				
+	temp2->next=NULL;
+	return firstnode;
+}
+nodeptr deleteBefore(nodeptr firstnode)
+{
+	nodeptr temp1,temp2;
+	temp1= firstnode;
+	int k;
+	printf("\nenter the element delete before:");
+	scanf("%d",&k);
+	if(temp1->info==k)
+		printf("\nDeletion is not possible");
+	else if(temp1->next->info==k)
+	{
+		temp2=temp1->next;
+		temp1->next=NULL;
+		firstnode=temp2;
+	}
+	else
+	{
+		while(temp1->next->info!=k)
+		{
+			temp2=temp1;
+			temp1=temp1->next;
+		}
+		temp2->next=temp1->next;
+		temp1->next=NULL;
+	}
+	return firstnode;
+}
+nodeptr deletionAfter(nodeptr firstnode)
+{
+	nodeptr temp1,temp2;
+	int k;
+	temp1=firstnode;
+	printf("\nEnter the element delete after:");
+	scanf("%d",&k);
+	while(temp1->info!=k)
+	{
+		temp1=temp1->next;
+	}
+	if(temp1->next==NULL)
+		printf("\ndeletion is not possible");
+	else
+	{
+		temp2=temp1->next;
+		temp1->next=temp2->next;
+		temp2->next=NULL;
+	}
+	return firstnode;
+}
 nodeptr del( nodeptr p)
 {
-
 	int c,i,k;
-	nodeptr p1,p2;
-	p1=p;
-	if(p1==NULL)
+	nodeptr firstnode;
+	firstnode=p;
+	if(firstnode==NULL)
 	{
 		printf("\nlist is empty");
 		return p;
@@ -165,67 +238,29 @@ nodeptr del( nodeptr p)
 		scanf("%d",&c);
 		switch(c)
 		{
-			case 1:	p2=p1->next;
-				p1->next=NULL;
-				return p2;
-			case 2:	while(p1->next->next!=NULL)
-					p1=p1->next;
-				p1->next=NULL;
-				return p;
-			case 3:	printf("\nenter the element delete before:");
-				scanf("%d",&k);
-				if(p1->info==k)
-					printf("\nDeletion is not possible");
-				else if(p1->next->info==k)
-				{
-					p2=p1->next;
-					p1->next=NULL;
-					p=p2;
-				}
-				else
-				{
-					while(p1->next->info!=k)
-					{
-						p2=p1;
-						p1=p1->next;
-					}
-					p2->next=p1->next;
-					p1->next=NULL;
-
-				}
-				return p;
-			case 4: printf("\nEnter the element delete after:");
-				scanf("%d",&k);
-				while(p1->info!=k)
-					p1=p1->next;
-				if(p1->next==NULL)
-					printf("\ndeletion is not possible");
-				else
-				{
-					p2=p1->next;
-					p1->next=p2->next;
-					p2->next=NULL;
-				}
-				return p;
-		  }
+			case 1:	return(deleteAtBeg(firstnode));
+			case 2:	return(deleteAtEnd(firstnode));
+			case 3:	return(deleteBefore(firstnode));
+		 	case 4: return(deletionAfter(firstnode)); 
+		}
 	}
 }
 void search(nodeptr p)
 {
 	int a,i;
-	nodeptr p1;
-	p1=p;
+	nodeptr temp;
+	temp=p;
 	printf("\nenter the searching element:");
 	scanf("%d",&a);
 	i=1;
-	while(p1!=NULL)
+	while(temp!=NULL)
 	{
-		if(p1->info==a)
+		if(temp->info==a)
 		{
 			printf("\nsearching elment is found at location:%d",i);
 			return;
 		}
-		p1=p1->next;
+		temp=temp->next;
 		i++;
 	}
 	printf("\nsearching element is not found");
@@ -250,10 +285,17 @@ void traversal(nodeptr p)
 {
 	nodeptr temp;
 	temp=p;
-	printf("\nelements are:\n");
-	while(temp!=NULL)
+	if(temp==NULL)
 	{
-		printf("%d-->",temp->info);
-		temp=temp->next;
+		printf("\nThere are no Elements\n");
+	}
+	else
+	{
+		printf("\nelements are:\n");
+		while(temp!=NULL)
+		{
+			printf("%d-->",temp->info);
+			temp=temp->next;
+		}
 	}
 }

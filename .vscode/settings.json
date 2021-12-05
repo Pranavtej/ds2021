@@ -3,7 +3,8 @@
         "conio.h": "c",
         "POSTFIXE.C": "cpp",
         "INPOST.C": "cpp",
-        "LINKOP.C": "cpp"
+        "LINKOP.C": "cpp",
+        "linkedListwithfun.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
