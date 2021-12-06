@@ -4,7 +4,9 @@
         "POSTFIXE.C": "cpp",
         "INPOST.C": "cpp",
         "LINKOP.C": "cpp",
-        "linkedListwithfun.C": "cpp"
+        "linkedListwithfun.C": "cpp",
+        "STACKLIN.C": "cpp",
+        "QUELINK.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
