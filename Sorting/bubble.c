@@ -12,7 +12,7 @@ int main(void)
 	{
 		scanf("%d",&a[i]);
 	}
-	selectionsort(a,n);
+	bubblesort(a,n);
 	printf("//---after sorting---//\n");
 	for(i=0;i<n;i++)
 		{
@@ -61,10 +61,16 @@ void insertionsort(int a[],int n)
 	{
 		t=a[i];
 		for(j=i-1;j>=0;j--)
+		{
 			if(a[j]>t)
+			{
 				a[j+1]=a[j];
+			}
 			else
+			{
 				break;
+			}
+		}
 		a[j+1]=t;
 	}
 }
