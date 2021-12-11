@@ -6,7 +6,8 @@
         "LINKOP.C": "cpp",
         "linkedListwithfun.C": "cpp",
         "STACKLIN.C": "cpp",
-        "QUELINK.C": "cpp"
+        "QUELINK.C": "cpp",
+        "tempCodeRunnerFile.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
