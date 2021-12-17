@@ -15,7 +15,7 @@ nodeptr reverse();
 void traversal();
 main()
 {
-	nodeptr first,last;
+	nodeptr first;
 	int choice;
 	clrscr();
 	first=NULL;
@@ -51,7 +51,7 @@ nodeptr getnode()
 	nodeptr p;
 	p=(nodeptr)malloc(sizeof(struct node));
 	p->info=0;
-	p->next=0;
+	p->next=NULL;
 	return p;
 }
 nodeptr insert(nodeptr p)

@@ -59,7 +59,7 @@ nodeptr getnode()
 	nodeptr p;
 	p=(nodeptr)malloc(sizeof(struct node));
 	p->info=0;
-	p->next=0;
+	p->next=NULL;
 	return p;
 }
 nodeptr insertAtBeg(nodeptr firstnode,nodeptr newnode)
@@ -86,7 +86,7 @@ nodeptr insertBeforElement(nodeptr firstnode,nodeptr newnode)
 	temp = firstnode;
 	printf("\nEnter the element insert before:");
 	scanf("%d",&k);
-	if(firstnode->info==k)
+	if(firstnode->info==k)  //Insertion before first node
 	{
 		newnode->next=firstnode;
 		firstnode = newnode;
@@ -138,9 +138,13 @@ nodeptr insert(nodeptr p)
 		switch(ch)
 		{
 			case 1:	return(insertAtBeg(firstnode,newnode));
+					break;
 			case 2:	return(insertAtEnd(firstnode,newnode));
+					break;
 			case 3: return(insertBeforElement(firstnode,newnode));
+					break;
 			case 4: return(insertAfterElement(firstnode,newnode));
+					break;
 		}
 	}
 }
@@ -239,9 +243,13 @@ nodeptr del( nodeptr p)
 		switch(c)
 		{
 			case 1:	return(deleteAtBeg(firstnode));
+					break;
 			case 2:	return(deleteAtEnd(firstnode));
+					break;
 			case 3:	return(deleteBefore(firstnode));
+					break;
 		 	case 4: return(deletionAfter(firstnode)); 
+			 		break;
 		}
 	}
 }
