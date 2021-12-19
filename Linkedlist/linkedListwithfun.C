@@ -18,6 +18,10 @@ nodeptr insertAtEnd(nodeptr,nodeptr);
 nodeptr insertBeforElement(nodeptr,nodeptr);
 nodeptr insertAfterElement(nodeptr,nodeptr);
 nodeptr deleteAtBeg(nodeptr);
+nodeptr deleteAtEnd(nodeptr);
+nodeptr deleteBefore(nodeptr);
+nodeptr deletionAfter(nodeptr);
+
 
 
 main()
